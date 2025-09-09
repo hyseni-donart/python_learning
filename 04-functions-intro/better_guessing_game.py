@@ -2,7 +2,18 @@ import random
 
 
 def get_integer(prompt):
-    """"""
+    """
+    Get an integer from Standard Input (stdin)
+
+    The function will continue looping and prompting
+    the user, until a valid `int` is entered.
+
+    Args:
+        prompt: The string that the user will see, when
+        they're prompted to enter the value.
+    Returns:
+        return: The integer that the user enters
+    """
     while True:
         temp = input(prompt)
         if temp.isnumeric():
@@ -35,6 +46,13 @@ highest = 1000
 # else:
 #     print("You got it first time!")
 
+#--------------------------------------------------------------------------
+print(input.__doc__)
+print("*" * 80)
+print(get_integer.__doc__)
+print("*" * 80)
+#--------------------------------------------------------------------------
+help(get_integer)
 #--------------------------------------------------------------------------
 answer = random.randint(1, highest)
 guess = 0
