@@ -1,4 +1,4 @@
-def banner_text(text=" ", screen_width=80):
+def banner_text(text: str = " ", screen_width: int = 80):
     if len(text) > screen_width - 4:
         raise ValueError(f"String {text} is larger than the specified width {screen_width}")
 
