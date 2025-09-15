@@ -1,4 +1,26 @@
-def banner_text(text: str = " ", screen_width: int = 80):
+def banner_text(text: str = " ", screen_width: int = 80) -> None:
+    """
+    Print a centered banner of text with decorative borders.
+
+    This function prints a line of text centered within a specified
+    screen width, surrounded by two asterisks (`**`) on each side.
+    If the text is a single asterisk (`*`), it prints a full-width line
+    of asterisks instead.
+
+    Args:
+        text (str, optional): The text to display in the banner.
+            Defaults to a single space (" ").
+        screen_width (int, optional): The total width of the banner.
+            Defaults to 80.
+
+    Raises:
+        ValueError: If the length of `text` is greater than
+            `screen_width - 4`.
+
+    Returns:
+        None: This function prints directly to the console and
+        does not return anything.
+    """
     if len(text) > screen_width - 4:
         raise ValueError(f"String {text} is larger than the specified width {screen_width}")
 
