@@ -14,7 +14,7 @@ BOLD = '\u001b[1m'
 UNDERLINE = '\u001b[4m'
 REVERSE = '\u001b[7m'
 
-def color_print(text: str, effect: str) -> None:
+def color_print(text: str, *effects: str) -> None:
     """
     Print text to the console with a given color or style effect.
 
@@ -24,22 +24,27 @@ def color_print(text: str, effect: str) -> None:
 
     Args:
         text (str): The text to be printed.
-        effect (str): The ANSI escape code for the desired color or style.
+        effects (str): The ANSI escape code for the desired color or style.
             For example, RED, GREEN, BOLD, UNDERLINE, REVERSE, etc.
 
     Returns:
         None: This function prints directly to the console and does not return a value.
     """
-    output_string = f"{effect}{text}{RESET}"
+    effect_string = "".join(effects)
+    output_string = f"{effect_string}{text}{RESET}"
     print(output_string)
 
 
 colorama.init()
 color_print("Hello, Red", RED)
+color_print("Hello, Red in Bold", RED, BOLD)
 # Test that the text was reset
 print("This should be on the default terminal color")
 color_print("Hello, Blue", BLUE)
+color_print("Hello, Blue reversed", BLUE, REVERSE)
+color_print("Hello, Blue reversed and uderlined ", BLUE, REVERSE, UNDERLINE)
 color_print("Hello, Yellow", YELLOW)
+color_print("Hello, Yellow in bold", YELLOW, BOLD)
 color_print("Hello, Bold", BOLD)
 color_print("Hello, Underline", UNDERLINE)
 color_print("Hello, Reverse", REVERSE)

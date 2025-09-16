@@ -72,19 +72,21 @@ def palindrome_sentence(sentence: str) -> bool:
 #     print(f"'{word}' is not a Palindrome")
 
 def fibonacci(n: int) -> int:
-    """Return the `n`th Fibonacci number, for positive `n`."""
-    if 0 <= n <= 1:
-        return n
+    """Return the `n`th Fibonacci number, for non-negative `n`."""
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
     
     n_minus1, n_minus2 = 1, 0
 
-    result = None
-    for f in range(n - 1):
+    for _ in range(2, n + 1):
         result = n_minus2 + n_minus1
         n_minus2 = n_minus1
         n_minus1 = result
 
     return result
+
 
 for i in range(36):
     print(i, fibonacci(i))
