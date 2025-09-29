@@ -24,11 +24,25 @@ vehicles = {
 
 # Adding items to out dictionary
 vehicles['starfighter'] = 'Lockheed F-104'
-vehicles['learjeet'] = 'Bombardier Learjeet 75'
+vehicles['learjet'] = 'Bombardier Learjeet 75'
 vehicles['toy'] = 'glider'
 
 # Updating items in our dictionary
 vehicles["virago"] = "Yamaha XV535"
 
+# Deleting items from a dictionary
+del vehicles['starfighter']
+
+# del vehicles['f1']
+result = vehicles.pop('f1', 'not present')
+print(result)
+
+plane = vehicles.pop('learjet')
+print(plane)
+
+bike = vehicles.pop('tenere', 'not present')
+print(bike)
+print()
+#-----------------------------------------------------
 for key, value in vehicles.items():
     print(key, value, sep=", ")
