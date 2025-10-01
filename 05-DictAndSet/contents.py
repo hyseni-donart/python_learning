@@ -63,3 +63,4 @@ recipes = {
     },
 }
 
+ingridients_to_buy = {}
